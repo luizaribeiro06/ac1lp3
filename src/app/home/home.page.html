@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ac 1 - LP3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-list-header> Exercício 1 </ion-list-header> <!--coloca dentro da lista pois é rolavel apois-->
+
+      <ion-radio-group [(ngModel)]="sexo"> <!--oq faz o ngmodel? pega um valor do html e manda par o ts, la no ts precisa ter uma variavel seelecionada para ter o ocnteudo-->
+    
+        <ion-item>
+          <ion-label>Mulher</ion-label>
+          <ion-radio slot="end" value="mulher"></ion-radio>
+        </ion-item>
+        <ion-item>
+
+          <ion-label>Homem</ion-label>
+          <ion-radio slot="end" value="homem"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-item>
+      <ion-label position="floating">Digite sua altura:</ion-label>
+      <ion-input [(ngModel)]= "altura" type="number"></ion-input>
+    </ion-item>
+
+    <ion-label>{{resultado}}</ion-label>
+
+    <ion-button expand="block" (click)="calcular()">Calcular</ion-button> <!--fora da lista ent ele fica no rodapé fixo ali-->
+  
+    <ion-list-header> Exercício 2 </ion-list-header>
+
+    <ion-item>
+      <ion-label position="floating">Digite o valor da compra:</ion-label>
+      <ion-input [(ngModel)]= "compra" type="number"></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-radio-group [(ngModel)]= "radioSelecionada">
+        <ion-item>
+          <ion-label>Pix</ion-label>
+          <ion-radio slot="end" value="pix"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Débito</ion-label>
+          <ion-radio slot="end" value="debito"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Crédito</ion-label>
+          <ion-radio slot="end" value="credito"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  
+  <ion-button expand="block" (click)="verificar()">Verificar</ion-button>
+
+</ion-content>
